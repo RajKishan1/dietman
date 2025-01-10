@@ -1,10 +1,11 @@
+"use client"
 import React from "react";
 
 const Gender = () => {
   return (
-    <div className=""> 
-      <img src="" alt="" />
-      <img src="" alt="" />
+    <div className="h-[20%] flex justify-center gap-20">
+      <img className="" src="images/male.png" alt="male" onClick={() => {}} />
+      <img src="images/female.png" alt="female" onClick={() => {}} />
     </div>
   );
 };
