@@ -13,18 +13,31 @@ const User = () => {
     setUsername: () => void;
     gender: string;
     setGender: (value: string) => void;
-    age: number;
-    setAge: () => {};
+    age: number | string;
+    setAge: (value: number) => {};
+    time: number;
+    setTime: (value: number) => void;
+    targetWgt: number;
+    setTargetWgt: (value: number) => void;
+    frequency: number;
+    setFrequency: (value: number) => void;
+    duration: number;
+    setDuration: (value: number) => void;
   }
   const [username, setUsername] = useState<string>("Please Enter Username");
   const [gender, setGender] = useState<string>("");
-  const [age, setAge] = useState();
-  const [weight, setWeight] = useState();
-  const [height, setHeight] = useState();
-  const [targetWgt, setTargetWgt] = useState();
-  const [time, setTime] = useState();
+  const [age, setAge] = useState(0);
+  const [weight, setWeight] = useState(0);
+  const [height, setHeight] = useState(0);
+  const [targetWgt, setTargetWgt] = useState(0);
+  const [time, setTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [frequency, setFrequency] = useState(0);
+  const [activity, setActivity] = useState<string>("");
+
   const userdata = {
     name: username,
+    usergender: gender,
     userAge: age,
     userweight: weight,
     userheight: height,
@@ -34,17 +47,33 @@ const User = () => {
   const pathname = usePathname();
   return (
     <div className='h-screen w-full flex items-center justify-center bg-[url("https://img.freepik.com/free-photo/view-green-fruits-vegetables_23-2149270968.jpg?t=st=1736583944~exp=1736587544~hmac=5cdd9cb6096939567ad757ef637f73f20aec0d00b2b00b382e79c941b7f5c56c&w=996")] bg-cover bg-center'>
-      <Name
+      {/* <Name
         username={username}
         setUsername={setUsername}
         gender={gender}
         setGender={setGender}
-      />
-      {/* {(pathname == "/user" && <Name />) || */}
-      {/* // (pathname == "/user/age" && <Age />)} */}
-      {/* <Target /> */}
-      {/* <Exercise /> */}
-      {/* <ExerciseMethod /> */}
+      /> */}
+      {/* <Age
+        age={age}
+        setAge={setAge}
+        height={height}
+        setHeight={setHeight}
+        weight={weight}
+        setWeight={setWeight}
+      /> */}
+      {/* <Target
+        time={time}
+        setTime={setTime}
+        targetWgt={targetWgt}
+        setTargetWgt={setTargetWgt}
+      /> */}
+      {/* <Exercise
+        frequency={frequency}
+        setFrequency={setFrequency}
+        duration={duration}
+        setDuration={setDuration}
+      /> */}
+      <ExerciseMethod activity={activity} setActivity={setActivity} />
     </div>
   );
 };

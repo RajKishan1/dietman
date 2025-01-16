@@ -11,8 +11,9 @@ const Option = ({ text }: prop) => {
       className={classname}
       onClick={() => {
         setClassname(
-          "h-[70px] w-[125px] rounded-full border-[3px] bg-green-600 border-white text-xl font-semibold text-slate-200 flex items-center justify-center shadow-lg shadow-black cursor-pointer"
+          "h-[70px] w-[125px] rounded-full border-[3px] bg-green-600 border-white text-xl font-semibold text-slate-200 flex items-center justify-center  cursor-pointer"
         );
+        console.log(text);
       }}
     >
       {text}

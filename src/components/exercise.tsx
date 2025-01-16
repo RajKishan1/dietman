@@ -3,7 +3,18 @@ import Btn from "./btn";
 import Option from "./(user_input)/option";
 import Link from "next/link";
 import Next_back_btn from "./next_back_btn";
-const ExerciseTime = () => {
+interface prop {
+  frequency: number;
+  setFrequency: (value: number) => void;
+  duration: number;
+  setDuration: (value: number) => void;
+}
+const ExerciseTime = ({
+  frequency,
+  setFrequency,
+  duration,
+  setDuration,
+}: prop) => {
   return (
     <div className="h-[75%] w-[60%] flex flex-col items-center justify-around gap-5 bg-slate-300 bg-opacity-75 shadow-2xl backdrop-blur-[4px]">
       <img src="/images/logo.png" alt="dietman" className="h-[30%]" />

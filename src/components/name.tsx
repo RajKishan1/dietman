@@ -9,7 +9,7 @@ import Next_back_btn from "./next_back_btn";
 interface prop {
   setUsername: (value: string) => void;
   username: string;
-  setGender: (value:string) => void;
+  setGender: (value: string) => void;
   gender: string;
 }
 const Name = ({ setUsername, username, gender, setGender }: prop) => {
@@ -32,6 +32,8 @@ const Name = ({ setUsername, username, gender, setGender }: prop) => {
         text="please enter username"
         onclick={() => {
           console.log(username);
+          console.log(gender);
+
           // console.log(user);
         }}
       />

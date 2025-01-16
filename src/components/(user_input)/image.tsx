@@ -1,21 +1,24 @@
 import React, { useState } from "react";
 interface prop {
   src: string;
-  alt: string;
+  altText: string;
+  activity?: string;
+  setActivity?: (value: any) => void;
 }
-const Image = ({ src, alt }: prop) => {
+const Image = ({ src, altText, activity, setActivity }: prop) => {
   const [classname, setClassname] = useState(
     "h-[125px] w-[125px] rounded-full"
   );
   return (
     <img
       src={src}
-      alt={alt}
+      alt={altText}
       className={classname}
       onClick={() => {
         setClassname(
-          "h-[125px] w-[125px] rounded-full ring ring-[2px] ring-blue-500"
+          "h-[125px] w-[125px] rounded-full ring ring-[6px] ring-green-500"
         );
+        // setActivity(altText);
       }}
     />
   );
