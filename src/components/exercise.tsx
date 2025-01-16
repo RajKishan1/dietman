@@ -2,6 +2,7 @@ import React from "react";
 import Btn from "./btn";
 import Option from "./(user_input)/option";
 import Link from "next/link";
+import Next_back_btn from "./next_back_btn";
 const ExerciseTime = () => {
   return (
     <div className="h-[75%] w-[60%] flex flex-col items-center justify-around gap-5 bg-slate-300 bg-opacity-75 shadow-2xl backdrop-blur-[4px]">
@@ -34,9 +35,8 @@ const ExerciseTime = () => {
           <Option text="Everyday" />
         </div>
       </div>
-      <Link href="/user/exercisemethod">
-        <Btn btntext="OK" />
-      </Link>
+      <Link href="/user/exercisemethod">{/* <Btn btntext="OK" /> */}</Link>
+      <Next_back_btn />
     </div>
   );
 };
