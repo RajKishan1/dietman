@@ -4,8 +4,12 @@ import Exercise from "@/components/exercise";
 import ExerciseMethod from "@/components/exerciseMethod";
 import Name from "@/components/name";
 import Target from "@/components/target";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import Naam from "@/components/naam";
+import Next_back_btn from "@/components/next_back_btn";
+import { log } from "console";
+import Response_Result from "@/components/reponse/response_Result";
 
 const User = () => {
   interface prop {
@@ -23,6 +27,8 @@ const User = () => {
     setFrequency: (value: number) => void;
     duration: number;
     setDuration: (value: number) => void;
+    pagenumber: number;
+    setPagenumber: (value: number) => void;
   }
   const [username, setUsername] = useState<string>("Please Enter Username");
   const [gender, setGender] = useState<string>("");
@@ -32,8 +38,9 @@ const User = () => {
   const [targetWgt, setTargetWgt] = useState(0);
   const [time, setTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [frequency, setFrequency] = useState(0);
   const [activity, setActivity] = useState<string>("");
+  const [frequency, setFrequency] = useState(0);
+  const [pagenumber, setPagenumber] = useState(1);
 
   const userdata = {
     name: username,
@@ -44,36 +51,72 @@ const User = () => {
     usertarget: targetWgt,
     targettime: time,
   };
-  const pathname = usePathname();
+  const increment = () => {
+    setPagenumber((e) => e + 1);
+  };
+  const decrement = () => {
+    setPagenumber((e) => e - 1);
+  };
   return (
-    <div className='h-screen w-full flex items-center justify-center bg-[url("https://img.freepik.com/free-photo/view-green-fruits-vegetables_23-2149270968.jpg?t=st=1736583944~exp=1736587544~hmac=5cdd9cb6096939567ad757ef637f73f20aec0d00b2b00b382e79c941b7f5c56c&w=996")] bg-cover bg-center'>
-      {/* <Name
-        username={username}
-        setUsername={setUsername}
-        gender={gender}
-        setGender={setGender}
-      /> */}
-      {/* <Age
-        age={age}
-        setAge={setAge}
-        height={height}
-        setHeight={setHeight}
-        weight={weight}
-        setWeight={setWeight}
-      /> */}
-      {/* <Target
-        time={time}
-        setTime={setTime}
-        targetWgt={targetWgt}
-        setTargetWgt={setTargetWgt}
-      /> */}
-      {/* <Exercise
-        frequency={frequency}
-        setFrequency={setFrequency}
-        duration={duration}
-        setDuration={setDuration}
-      /> */}
-      <ExerciseMethod activity={activity} setActivity={setActivity} />
+    <div className='h-screen w-full flex flex-col items-center justify-center bg-[url("https://img.freepik.com/free-photo/view-green-fruits-vegetables_23-2149270968.jpg?t=st=1736583944~exp=1736587544~hmac=5cdd9cb6096939567ad757ef637f73f20aec0d00b2b00b382e79c941b7f5c56c&w=996")] bg-cover bg-center'>
+      {pagenumber == 1 ? (
+        <Name
+          username={username}
+          setUsername={setUsername}
+          gender={gender}
+          setGender={setGender}
+          pagenumber={pagenumber}
+          setPagenumber={setPagenumber}
+        />
+      ) : pagenumber === 2 ? (
+        <Age
+          age={age}
+          setAge={setAge}
+          height={height}
+          setHeight={setHeight}
+          weight={weight}
+          setWeight={setWeight}
+          pagenumber={pagenumber}
+          setPagenumber={setPagenumber}
+        />
+      ) : pagenumber === 3 ? (
+        <Target
+          time={time}
+          setTime={setTime}
+          targetWgt={targetWgt}
+          setTargetWgt={setTargetWgt}
+        />
+      ) : pagenumber === 4 ? (
+        <Exercise
+          frequency={frequency}
+          setFrequency={setFrequency}
+          duration={duration}
+          setDuration={setDuration}
+        />
+      ) : pagenumber === 5 ? (
+        <ExerciseMethod activity={activity} setActivity={setActivity} />
+      ) : pagenumber === 6 ? (
+        <Response_Result />
+      ) : (
+        pagenumber
+      )}
+      <div className="h-[10%] w-[60%] flex flex-col items-center justify-around gap-5 bg-slate-300 bg-opacity-75 backdrop-blur-[4px] border-collapse">
+        <Next_back_btn
+          onLeftclick={() => {
+            pagenumber === 1
+              ? alert("NO PREVIOUS PAGE AVAILABLE")
+              : decrement();
+          }}
+          onRightclick={() => {
+            {
+              increment();
+            }
+            {
+              pagenumber === 5 ? console.log(userdata) : <></>;
+            }
+          }}
+        />
+      </div>
     </div>
   );
 };

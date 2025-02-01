@@ -9,9 +9,9 @@ interface prop {
 }
 const ExerciseMethod = ({ activity, setActivity }: prop) => {
   return (
-    <div className="h-[70%] w-[60%] flex flex-col items-center justify-around gap-5 bg-slate-300 bg-opacity-75 shadow-2xl backdrop-blur-[4px]">
+    <div className="h-[70%] w-[60%] flex flex-col items-center justify-around  bg-slate-300 bg-opacity-75 backdrop-blur-[4px]">
       <img src="/images/logo.png" alt="dietman" className="h-[30%]" />
-      <div className=" h-[45%] w-full flex flex-col items-center justify-around">
+      <div className=" h-[45%] w-full mt-[-40px] flex flex-col items-center justify-around">
         <h1 className="text-3xl text-slate-700 font-bold ml-7">
           Choose Your Exercise  
         </h1>
@@ -29,12 +29,12 @@ const ExerciseMethod = ({ activity, setActivity }: prop) => {
           <Image altText="others" src="/images/others.png" />
         </div>
       </div>
-      <Link href="">{/* <Btn btntext="OK" /> */}</Link>
-      <Next_back_btn
+      {/* <Link href=""><Btn btntext="OK" /></Link> */}
+      {/* <Next_back_btn
         onclick={() => {
           setActivity("");
         }}
-      />
+      /> */}
     </div>
   );
 };

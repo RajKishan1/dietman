@@ -11,17 +11,27 @@ interface prop {
   setWeight: (value: number) => void;
   height: number;
   weight: number;
+  pagenumber: number;
+  setPagenumber: (value: number) => void;
 }
-const Age = ({ age, height, weight, setHeight, setWeight, setAge }: prop) => {
+const Age = ({
+  age,
+  height,
+  weight,
+  setHeight,
+  setWeight,
+  setAge,
+  pagenumber,
+  setPagenumber,
+}: prop) => {
   const [bmi, setBmi] = useState();
 
-  // const userbmi = (userheight: number, userweight: number) => {
-  //   return userweight / (userheight * userheight);
-  // };
-  // console.log(userbmi(userheight, userweight));
+  const userbmi = (userheight: number, userweight: number) => {
+    return userweight / (userheight * userheight);
+  };
 
   return (
-    <div className="h-[80%] w-[60%] flex flex-col items-center justify-around gap-5 bg-slate-300 bg-opacity-75 shadow-2xl backdrop-blur-[4px]">
+    <div className="h-[70%] w-[60%] flex flex-col items-center justify-around bg-slate-300 bg-opacity-75  backdrop-blur-[4px]">
       <img src="/images/logo.png" alt="dietman" className="h-[30%]" />
       <Input
         src={cake}
@@ -57,11 +67,14 @@ const Age = ({ age, height, weight, setHeight, setWeight, setAge }: prop) => {
       >
         print
       </button> */}
-      <Next_back_btn
-        onclick={() => {
+      {/* <Next_back_btn
+        onLeftclick={() => setPagenumber(1)}
+        onRightclick={() => {
           console.log("userHeight=" + height, "weight=" + weight, "age=" + age);
+          console.log(userbmi(height, weight));
+          setPagenumber(3);
         }}
-      />
+      /> */}
     </div>
   );
 };

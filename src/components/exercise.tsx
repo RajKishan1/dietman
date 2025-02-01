@@ -16,7 +16,7 @@ const ExerciseTime = ({
   setDuration,
 }: prop) => {
   return (
-    <div className="h-[75%] w-[60%] flex flex-col items-center justify-around gap-5 bg-slate-300 bg-opacity-75 shadow-2xl backdrop-blur-[4px]">
+    <div className="h-[70%] w-[60%] flex flex-col items-center justify-around bg-slate-300 bg-opacity-75 backdrop-blur-[4px]">
       <img src="/images/logo.png" alt="dietman" className="h-[30%]" />
       <div className="h-[25%] bg-red- w-full flex flex-col items-center justify-evenly mt-[-15px]">
         <h2 className="text-slate-700 font-bold text-3xl ml-11">
@@ -46,8 +46,8 @@ const ExerciseTime = ({
           <Option text="Everyday" />
         </div>
       </div>
-      <Link href="/user/exercisemethod">{/* <Btn btntext="OK" /> */}</Link>
-      <Next_back_btn />
+      {/* <Link href="/user/exercisemethod"><Btn btntext="OK" /></Link> */}
+      {/* <Next_back_btn /> */}
     </div>
   );
 };

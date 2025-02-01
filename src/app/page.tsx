@@ -7,7 +7,7 @@ const Home = () => {
       <div className="text-6xl font-black text-black mt-16">Welcome to..</div>
       <img src="images/logo.png" alt="dietman" />
       <Link href="/user">
-        <button className="h-20 w-56 bg-blue-500 rounded-full text-2xl font-bold mt-16">
+        <button className="h-20 w-56 bg-green-500 rounded-full text-2xl text-black font-bold mt-16  border-black border-[2px] shadow-2xl">
           Let's get Started
         </button>
       </Link>

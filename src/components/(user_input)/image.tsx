@@ -16,7 +16,7 @@ const Image = ({ src, altText, activity, setActivity }: prop) => {
       className={classname}
       onClick={() => {
         setClassname(
-          "h-[125px] w-[125px] rounded-full ring ring-[6px] ring-green-500"
+          "h-[135px] w-[135px] rounded-full ring ring-[6px] ring-green-500"
         );
         // setActivity(altText);
       }}

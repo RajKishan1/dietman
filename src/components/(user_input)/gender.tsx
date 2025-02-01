@@ -17,7 +17,6 @@ const Gender = ({ gender, setGender }: prop) => {
       setClassfemale("ring ring-[5px] ring-green-600 rounded-full"),
         setClassmale("");
     }
-    console.log(selectedgender);
   }, [gender]);
   return (
     <div className="h-[20%] flex justify-center gap-20">
