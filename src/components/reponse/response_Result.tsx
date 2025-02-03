@@ -1,12 +1,34 @@
 "use client";
 import axios from "axios";
 import React, { useState } from "react";
+import dataObject from "../dataObject";
+import RenderHTML from "./RenderHTML";
+import { Loader } from "lucide-react";
+
+function Loading() {
+  return <Loader className="animate-spin h-[150%] w-[150%] text-gray-500" />;
+}
+
 const Response_Result = () => {
-  const [userinput, setUserinput] = useState("");
+  const [userinput, setUserinput] = useState(
+    `"You are an expert nutritionist and fitness coach. Your task is to create a highly customized and detailed diet plan based on the user's personal details and fitness goals. The diet plan should be optimized for their specific needs, whether they want to gain weight, lose weight, or maintain their current physique. Consider their preferred sports and exercise frequency when crafting the plan. Provide meal recommendations for breakfast, lunch, dinner, and snacks, along with portion sizes and nutritional value. Suggest alternative foods if certain items are unavailable. Include hydration tips, supplementation (if necessary), and a rough calorie breakdown. Ensure the diet is practical, sustainable, and suitable for their time frame and lifestyle. Use a structured, easy-to-follow format.
+    send the response in html code in tabular form with tailwind styling and make it responsive also. and send only dietplan, nothing other than that.
+
+🔹 HERE IS THE USER DATA:
+Name: ${dataObject.name}
+Age: ${dataObject.userAge}
+Height: ${dataObject.userheight}
+Current Weight: ${dataObject.userweight}
+Target Weight: ${dataObject.usertargetweight}
+Time Period: ${dataObject.targettime}
+Preferred Sports: Badminton, Swimming
+Exercise Frequency: 5 days a week 
+`
+  );
   const [response, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
   const apiKey = process.env.NEXT_PUBLIC_REACT_APP_OPENAI_API_KEY;
-  console.log("API Key:", apiKey);
+  // console.log("API Key:", apiKey);
   // console.log(userdata)
 
   const sendRequest = async () => {
@@ -36,24 +58,13 @@ const Response_Result = () => {
     setLoading(false);
   };
   return (
-    <div className="h-[70%] w-[60%] bg-red-400">
-      <div className="bg-green-500 text-center">
-        <h2>Chat with AI</h2>
-        <input
-          type="text"
-          value={userinput}
-          onChange={(e) => setUserinput(e.target.value)}
-          placeholder="Type your message..."
-        />
-        <button onClick={sendRequest} disabled={loading}>
-          {loading ? "Loading..." : "Send"}
-        </button>
-        <p>
-          <strong>Response:</strong> {response}
-        </p>
-      </div>
+    <div className="h-[90%] w-[90%] bg-slate-300 backdrop-blur-lg opacity-[80%]">
+      <button className="text-black" onClick={sendRequest} disabled={loading}>
+        {loading ? <Loading /> : "Send"}
+      </button>
+      <RenderHTML HTMLContent={response} />
+      <div className="text-black">ll</div>
     </div>
   );
 };
-
 export default Response_Result;

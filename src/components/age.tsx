@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import Input from "./(user_input)/input";
-import Btn from "./btn";
 import Link from "next/link";
 import { cake, height_icon, weight_icon } from "../../public/shared/config";
-import Next_back_btn from "./next_back_btn";
 interface prop {
   age: number;
   setAge: (value: number) => void;
@@ -11,19 +9,8 @@ interface prop {
   setWeight: (value: number) => void;
   height: number;
   weight: number;
-  pagenumber: number;
-  setPagenumber: (value: number) => void;
 }
-const Age = ({
-  age,
-  height,
-  weight,
-  setHeight,
-  setWeight,
-  setAge,
-  pagenumber,
-  setPagenumber,
-}: prop) => {
+const Age = ({ age, height, weight, setHeight, setWeight, setAge }: prop) => {
   const [bmi, setBmi] = useState();
 
   const userbmi = (userheight: number, userweight: number) => {
@@ -59,22 +46,6 @@ const Age = ({
       />
 
       <Link href="/user/target">{/* <Btn btntext="OK" />   */}</Link>
-      {/* <button
-        className="bg-red-600 text-blue-50 font-black"
-        onClick={() => {
-          console.log(userheight, userweight);
-        }}
-      >
-        print
-      </button> */}
-      {/* <Next_back_btn
-        onLeftclick={() => setPagenumber(1)}
-        onRightclick={() => {
-          console.log("userHeight=" + height, "weight=" + weight, "age=" + age);
-          console.log(userbmi(height, weight));
-          setPagenumber(3);
-        }}
-      /> */}
     </div>
   );
 };

@@ -4,12 +4,9 @@ import Exercise from "@/components/exercise";
 import ExerciseMethod from "@/components/exerciseMethod";
 import Name from "@/components/name";
 import Target from "@/components/target";
-import React, { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
-import Naam from "@/components/naam";
+import React, { useState } from "react";
 import Next_back_btn from "@/components/next_back_btn";
-import { log } from "console";
-import Response_Result from "@/components/reponse/response_Result";
+import Overview from "@/components/overview";
 
 const User = () => {
   interface prop {
@@ -51,6 +48,7 @@ const User = () => {
     usertarget: targetWgt,
     targettime: time,
   };
+  //functions to increase and decrease page number.
   const increment = () => {
     setPagenumber((e) => e + 1);
   };
@@ -65,8 +63,6 @@ const User = () => {
           setUsername={setUsername}
           gender={gender}
           setGender={setGender}
-          pagenumber={pagenumber}
-          setPagenumber={setPagenumber}
         />
       ) : pagenumber === 2 ? (
         <Age
@@ -76,8 +72,6 @@ const User = () => {
           setHeight={setHeight}
           weight={weight}
           setWeight={setWeight}
-          pagenumber={pagenumber}
-          setPagenumber={setPagenumber}
         />
       ) : pagenumber === 3 ? (
         <Target
@@ -96,7 +90,16 @@ const User = () => {
       ) : pagenumber === 5 ? (
         <ExerciseMethod activity={activity} setActivity={setActivity} />
       ) : pagenumber === 6 ? (
-        <Response_Result />
+        // <Response_Result />
+        <Overview
+          name={username}
+          usergender={gender}
+          userAge={age}
+          userweight={weight}
+          userheight={height}
+          usertarget={targetWgt}
+          targettime={time}
+        />
       ) : (
         pagenumber
       )}
@@ -109,10 +112,12 @@ const User = () => {
           }}
           onRightclick={() => {
             {
-              increment();
+              pagenumber === 5 ? console.log(userdata) : <></>;
+              pagenumber === 6
+                ? alert("NO FURTHER PAGE AVAILABLE")
+                : increment();
             }
             {
-              pagenumber === 5 ? console.log(userdata) : <></>;
             }
           }}
         />
