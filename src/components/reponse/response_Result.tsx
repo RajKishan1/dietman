@@ -58,7 +58,7 @@ Exercise Frequency: 5 days a week
     setLoading(false);
   };
   return (
-    <div className="h-[90%] w-[90%] bg-slate-300 backdrop-blur-lg opacity-[80%]">
+    <div className="h-[90%] w-[90%] bg-gradient-to-br from-[#85FFBD] to-[#FFFB7D] backdrop-blur-lg opacity-[95%]">
       <button className="text-black" onClick={sendRequest} disabled={loading}>
         {loading ? <Loading /> : "Send"}
       </button>
