@@ -22,7 +22,7 @@ const ExerciseTime = ({
         <h2 className="text-slate-700 font-bold text-3xl ml-11">
           Duration of your exercise : (per Day)
         </h2>
-        <div className="w-full flex justify-evenly">
+        <div className="w-full flex flex-col md:flex-row justify-evenly">
           <Option text="10 min" />
           <Option text="20 min" />
           <Option text="30 min" />

@@ -26,7 +26,7 @@ const Overview = ({
   frequency,
 }: prop) => {
   return (
-    <div className="h-[70%] w-[60%] flex flex-col items-center justify-evenly gap-3 bg-slate-300 bg-opacity-75 backdrop-blur-[4px] border-collapse">
+    <div className="h-[70vh] md:h-[70%] w-[95vw] md:w-[60%] flex flex-col items-center justify-evenly gap-3 bg-slate-300 bg-opacity-75 backdrop-blur-[4px] border-collapse ">
       <img src="images/logo.png" alt="dietman" className="h-[30%]" />
       <div className="h-[70%] w-[70%] bg-green-1 flex flex-col items-center justify-evenly">
         <H_one text={`I am ${name}. I'm ${userAge} years old ${usergender}.`} />

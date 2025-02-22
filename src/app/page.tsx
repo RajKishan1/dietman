@@ -11,7 +11,7 @@ const Home = () => {
       <img src="images/logo.png" alt="dietman" />
       <Link href="/user">
         <motion.button
-          className="h-12 lg:h-20 w-36 lg:w-56 bg-green-500 rounded-full text-md lg:text-2xl text-black font-normal lg:font-bold mt-16  border-black border-[2px] shadow-2xl"
+          className="h-12 lg:h-20 w-36 lg:w-56 bg-green-500 rounded-full text-md lg:text-2xl text-black font-normal lg:font-bold mt-16  border-slate-700 border-8 shadow-2xl"
           whileTap={{ scale: 0.85 }}
         >
           Let's get Started

@@ -20,7 +20,7 @@ const Next_back_btn = ({
   return (
     <div className="h-[62%] w-[95%] px-10 flex justify-between items-center">
       <button
-        className="h-[70px] w-[70px] rounded-full bg-green-600 text-slate-800"
+        className="h-[40px] md:h-[70px] w-[40px] md:w-[70px] rounded-full bg-green-600 text-slate-800"
         onClick={onLeftclick}
       >
         <ArrowLeft
@@ -34,7 +34,7 @@ const Next_back_btn = ({
         <div className="h-full w-[15%] bg-green-500 rounded-full"></div>
       </div>
       <button
-        className="h-[70px] w-[70px] rounded-full bg-green-600  text-slate-100"
+        className="h-[40px] md:h-[70px] w-[40px] md:w-[70px] rounded-full bg-green-600  text-slate-100"
         onClick={onRightclick}
       >
         <ArrowRight

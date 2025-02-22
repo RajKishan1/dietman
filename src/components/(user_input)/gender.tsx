@@ -19,7 +19,7 @@ const Gender = ({ gender, setGender }: prop) => {
     }
   }, [gender]);
   return (
-    <div className="h-[12%] lg:h-[20%] bg-red-200 flex justify-center gap-20">
+    <div className="h-[12%] lg:h-[20%]  flex justify-center gap-20">
       <img
         className={classmale}
         src="images/male.png"
