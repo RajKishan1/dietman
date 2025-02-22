@@ -47,6 +47,8 @@ const User = () => {
     userheight: height,
     usertarget: targetWgt,
     targettime: time,
+    ExerciseFrequency: frequency,
+    ExerciseDuration: duration,
   };
   //functions to increase and decrease page number.
   const increment = () => {
@@ -99,6 +101,8 @@ const User = () => {
           userheight={height}
           usertarget={targetWgt}
           targettime={time}
+          frequency={frequency}
+          duration={duration}
         />
       ) : (
         pagenumber

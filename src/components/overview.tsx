@@ -11,6 +11,8 @@ interface prop {
   userheight: number;
   usertarget: number;
   targettime: number;
+  duration: number;
+  frequency: number;
 }
 const Overview = ({
   name,
@@ -20,6 +22,8 @@ const Overview = ({
   userheight,
   usertarget,
   targettime,
+  duration,
+  frequency,
 }: prop) => {
   return (
     <div className="h-[70%] w-[60%] flex flex-col items-center justify-evenly gap-3 bg-slate-300 bg-opacity-75 backdrop-blur-[4px] border-collapse">
@@ -33,7 +37,9 @@ const Overview = ({
         <H_one
           text={`I want my weight to be ${usertarget}Kg in ${targettime} Months`}
         />
-        {/* <H_one text={`Time Period:${targettime} Months`} /> */}
+        <H_one
+          text={`I Exercise for ${duration} minutes for ${frequency} in a week`}
+        />
       </div>
       <Link href={"/result"}>
         <button

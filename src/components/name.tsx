@@ -14,7 +14,7 @@ const Name = ({ setUsername, username, gender, setGender }: prop) => {
   // const [username] = useState("username");
 
   return (
-    <div className="h-[70%] w-[60%] flex flex-col items-center justify-evenly gap-3 bg-slate-300 bg-opacity-75 backdrop-blur-[4px] border-collapse">
+    <div className="h-[85%] lg:h-[70%] w-[95%] lg:w-[60%] flex flex-col items-center justify-evenly gap-3 bg-slate-300 bg-opacity-75 backdrop-blur-[4px] border-collapse">
       <img src="images/logo.png" alt="dietman" className="h-[30%]" />
       {/* <Image src="images/logo.png" alt="dietman" /> */}
       <Input
