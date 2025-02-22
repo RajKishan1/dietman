@@ -9,7 +9,7 @@ interface prop {
 }
 const ExerciseMethod = ({ activity, setActivity }: prop) => {
   return (
-    <div className="h-[70%] w-[60%] flex flex-col items-center justify-around  bg-slate-300 bg-opacity-75 backdrop-blur-[4px]">
+    <div className="h-auto w-[85%] md:w-[60%] flex flex-col items-center justify-around  bg-slate-300 bg-opacity-75 backdrop-blur-[4px]">
       <img src="/images/logo.png" alt="dietman" className="h-[30%]" />
       <div className=" h-[45%] w-full mt-[-40px] flex flex-col items-center justify-around">
         <h1 className="text-3xl text-slate-700 font-bold ml-7">

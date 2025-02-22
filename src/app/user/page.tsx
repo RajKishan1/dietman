@@ -107,7 +107,7 @@ const User = () => {
       ) : (
         pagenumber
       )}
-      <div className="h-[10%] w-[60%] flex flex-col items-center justify-around gap-5 bg-slate-300 bg-opacity-75 backdrop-blur-[4px] border-collapse">
+      <div className="h-[10%] w-[85%] md:w-[60%] flex flex-col items-center justify-around gap-5 bg-slate-300 bg-opacity-75 backdrop-blur-[4px] border-collapse">
         <Next_back_btn
           onLeftclick={() => {
             pagenumber === 1

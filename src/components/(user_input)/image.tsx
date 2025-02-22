@@ -7,7 +7,7 @@ interface prop {
 }
 const Image = ({ src, altText, activity, setActivity }: prop) => {
   const [classname, setClassname] = useState(
-    "h-[125px] w-[125px] rounded-full"
+    "h-[60px] md:h-[125px] w-[60px] md:w-[125px] rounded-full"
   );
   return (
     <img
@@ -16,7 +16,7 @@ const Image = ({ src, altText, activity, setActivity }: prop) => {
       className={classname}
       onClick={() => {
         setClassname(
-          "h-[135px] w-[135px] rounded-full ring ring-[6px] ring-green-500"
+          "h-[60px] md:h-[125px] w-[60px] md:w-[125px] rounded-full ring ring-[3px] md:ring-[6px] ring-green-500"
         );
         // setActivity(altText);
       }}

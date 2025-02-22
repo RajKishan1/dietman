@@ -12,7 +12,7 @@ interface prop {
 }
 const Target = ({ time, setTime, targetWgt, setTargetWgt }: prop) => {
   return (
-    <div className="h-[70%] w-[60%] flex flex-col items-center justify-around gap-5 bg-slate-300 bg-opacity-75 backdrop-blur-[4px]">
+    <div className="h-[70%] w-[85%] md:w-[60%] flex flex-col items-center justify-around gap-5 bg-slate-300 bg-opacity-75 backdrop-blur-[4px]">
       <img src="/images/logo.png" alt="dietman" className="h-[30%]" />
       <Input
         src={weight_icon}

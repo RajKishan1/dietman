@@ -18,7 +18,7 @@ const Age = ({ age, height, weight, setHeight, setWeight, setAge }: prop) => {
   };
 
   return (
-    <div className="h-[90vh] md:h-[70%] w-[80vw] md:w-[60%] flex flex-col items-center justify-around bg-slate-300 bg-opacity-75  backdrop-blur-[4px]">
+    <div className="h-[90vh] md:h-[70%] w-[85vw] md:w-[60%] flex flex-col items-center justify-around bg-slate-300 bg-opacity-75  backdrop-blur-[4px]">
       <img src="/images/logo.png" alt="dietman" className="h-[30%]" />
       <Input
         src={cake}

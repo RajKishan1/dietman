@@ -18,7 +18,7 @@ const Next_back_btn = ({
 }: prop) => {
   const [textclass, setTextclass] = useState("text-2xl  opacity-0");
   return (
-    <div className="h-[62%] w-[95%] px-10 flex justify-between items-center">
+    <div className="h-[62%] w-[95%] px-0 flex justify-between items-center">
       <button
         className="h-[40px] md:h-[70px] w-[40px] md:w-[70px] rounded-full bg-green-600 text-slate-800"
         onClick={onLeftclick}
